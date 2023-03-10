@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="index.css">
+  <title>Frontend Mentor | Multi-step form</title>
+  
+
+  
+</head>
+<body>
+  
+     <div class="d-flex">
+       <div class="d-flexi">
+        <div class="df1">
+           <ol>
+            <div id="li"><button class="btn-1"><a href="index.html" class="a-1">1</a></button><li><span>STEP 1</span> <br>
+                <p>YOUR INFO</p>
+            </li></div>
+            <div id="li"><button><a href="select.html">2</a></button><li><span>STEP 2</span> <br>
+              <p>SELECT PLAN</p>
+            </li></div>
+            <div id="li"><button><a href="index.html">3</a></button><li><span>STEP 3</span> <br>
+              <p>ADD-ONS</p>
+            </li></div>
+            <div id="li"><button><a href="index.html">4</a></button><li><span>STEP 4</span> <br>
+              <p>SUMMARY</p>
+            </li></div>
+           </ol>
+         </div>
+         <div class="df2">
+            <h1>Personal info</h1>
+            <p>Please provide your name,email address, and phone number.</p>
+            <form action="select.html">
+              <label for="name">Name</label> <br>
+              <input type="text" required value="Vanessa Mint" id="name"><br>
+              <label for="email-address">Email Address</label> <br>
+              <input type="email" required value="vanessamint@" id="email-address"><br>
+              <label for="phone-number">Phone Number</label> <br>
+              <input type="text" required value="e.g +1 234 567 890" id="phone-number"><br>
+
+              <!-- <input type="submit" value="Next Step" id="submit" href="select.html"> -->
+              <div id="button"><a href="select.html">Next Step</a></div>
+            </form>
+         </div>
+       </div>
+     </div>
+  
+  <script>
+
+        let personName = document.getElementById("name");
+        let emailAddress = document.getElementById("email-address");
+        let phoneNumber = document.getElementById("phone-number");
+
+        // console.log(personName)
+        // console.log(emailAddress)
+        // console.log(phoneNumber)
+
+        let personInfo = [];
+
+        let btnBox = document.getElementById('button');
+
+        btnBox.addEventListener('click', function(e){
+
+            
+            e.preventDefault()
+
+            localStorage.setItem('person-name',personName.value)
+            localStorage.setItem('email-address',emailAddress.value)
+            localStorage.setItem('phone-number',phoneNumber.value)
+
+            window.location.href= "select.html"
+          
+        });
+
+        personInfo.push(localStorage.getItem('person-name'),localStorage.getItem('email-address'),localStorage.getItem('phone-number'));
+
+        
+        if(window.location.href == 'file:///C:/Users/USER/Desktop/MAIN/index.html'){
+          let btn = document.querySelector('.btn-1');
+          let a = document.querySelector('.a-1');
+
+
+          btn.style.backgroundColor = "hsl(206, 94%, 87%)";
+          btn.style.border = "0";
+          a.style.color = "black"
+        }
+
+
+  </script>
+</body>
+</html>

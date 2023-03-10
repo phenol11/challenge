@@ -1,0 +1,128 @@
+.boxes{
+    display: flex;
+    margin-bottom:30px ;
+}
+.boxes div{
+    padding: 20px;
+    width: 150px;
+    height: auto;
+    border: 1px solid   hsl(243, 100%, 62%);
+    border-radius: 8px;
+}
+.boxes div:hover{
+    border: 2px solid  hsl(231, 11%, 63%);
+}
+.second-box{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.first-box h2,.second-box h2,.third-box h2{
+    padding-top: 45px;
+    color: hsl(213, 96%, 18%);
+    line-height: 1.5;
+    font-weight: 600;
+}
+.first-box h3,.second-box h3,.third-box h3{
+    color: hsl(231, 11%, 63%);
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 600;
+    font-style: normal;
+}
+.toggle{
+    display: flex;
+    align-items: center;
+    width:200px ;
+}
+.switch{
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    position: relative;
+}
+.switch input{
+    display: none;
+}
+.slider{
+    cursor: pointer;
+    background-color: hsl(213, 96%, 18%);
+    transition: .4s;
+    -webkit-transition: .4s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+}
+.slider:before{ 
+     position: absolute;
+     content: "";
+     height: 16px;
+     width: 16px;
+     background-color: white;   
+     transition: 0.4s;
+    -webkit-transition: 0.4s ;
+    margin: 2px;
+    border-radius: 50%;
+}
+input:checked + .slider{
+    background-color:hsl(213, 96%, 18%);
+}
+input:checked + .slider:before{
+    /* -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px); */
+    transform: translateX(20px);
+}
+.before{
+    margin-right: 20px;
+    font-size: 16px;
+}
+.after{
+    margin-left: 20px;
+    font-size: 16px;
+}
+#toggle{
+    padding: 15px 145px ; 
+    background-color:  hsl(217, 100%, 97%);
+    border-radius: 5px;
+}
+#button{
+    margin-top: -30px;
+}
+.tranbtn{
+     margin-top: 120px;
+}
+.tranbtn a:hover{
+    color: hsl(213, 96%, 18%);
+}
+.tranbtn a{
+    color: hsl(231, 11%, 63%);;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* #buttoni{
+    width: 21%;
+    padding: 0 7px;
+    margin-left: 79%;
+    height: 40px;
+    margin-top: 60px;
+    color: white;
+    background-color:  hsl(213, 96%, 18%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+}
+#buttoni a{
+    text-decoration: none;
+    color: white;
+} */
+.click{
+    transition:0.5s ;
+    background-color: hsl(231, 11%, 63%);
+    border: 1px solid white;
+}
+.changeBc{
+    color:  hsl(213, 96%, 18%);
+}

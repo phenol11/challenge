@@ -1,0 +1,142 @@
+*{
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    padding:50px 160px ;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: hsl(217, 100%, 97%);
+}
+.d-flex{
+    width: 1000px;
+    height: 600px;
+    background-color: white;
+    border-radius: 15px;
+}
+.d-flexi{
+  padding: 16px 13px;
+  display: flex;
+}
+.df1{
+    background-image: url("assets/images/bg-sidebar-desktop.svg");
+    width: 274px;
+    height: 568px;
+    padding-top: 40px;
+    padding-left: 50px;
+    color: white;
+}
+.df2{
+    width: 480px;
+    height: 568px;
+    margin-left: 110px;
+    margin-right: 110px;
+    padding-top: 40px;
+}
+
+.df2 h1{
+    color: hsl(213, 96%, 18%);
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 2;
+}
+.df2 p{
+    color: hsl(231, 11%, 63%);
+    font-size: 16px;
+    padding-bottom: 25px;
+    line-height: 2;
+}
+label{
+    color:hsl(213, 96%, 18%);
+    font-size: 16px;
+    line-height: 2;
+}
+input{
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    border-color:  hsl(231, 11%, 63%) ;
+    border-width: 1px;
+    border-style: solid;
+    padding:20px 7px ;
+    margin-bottom: 15px;
+    color: hsl(213, 96%, 18%);
+    font-weight: 700;
+    outline: none;
+}
+input:hover{
+    border-color: hsl(228, 100%, 84%) ;
+    border-width: 2px;
+}
+#submit{
+    width: 21%;
+    padding: 0 7px;
+    margin-left: 79%;
+    height: 40px;
+    margin-top: 60px;
+    color: white;
+    background-color:  hsl(213, 96%, 18%);
+}
+li{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    list-style: none;
+}
+li p{
+    padding-top: 2px;
+}
+ol{
+    margin-top: -10px;
+}
+span{
+    color: hsl(231, 11%, 63%);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+button{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin-left: -30px;
+    margin-right: 20px;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+    color: white;
+    background-color:  hsl(243, 100%, 62%);
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+#li{
+    display: flex;
+    align-items: center;
+}
+button:hover{
+    background-color:hsl(206, 94%, 87%);
+    color: black;
+    border-style: none;
+}
+button a:hover{
+    color: black;
+}
+#button{
+    width: 21%;
+    padding: 0 7px;
+    margin-left: 79%;
+    height: 40px;
+    margin-top: 60px;
+    color: white;
+    background-color:  hsl(213, 96%, 18%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+}
+#button a{
+    text-decoration: none;
+    color: white;
+}

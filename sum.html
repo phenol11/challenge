@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="select.css">
+  <link rel="stylesheet" href="add.css">
+  <link rel="stylesheet" href="sum.css">
+  <title>Frontend Mentor | Multi-step form</title>
+  
+
+  
+</head>
+<body>
+  
+     <div class="d-flex">
+       <div class="d-flexi">
+        <div class="df1">
+           <ol>
+            <div id="li"><button><a href="index.html">1</a></button><li><span>STEP 1</span> <br>
+                <p>YOUR INFO</p>
+            </li></div>
+            <div id="li"><button><a href="select.html">2</a></button><li><span>STEP 2</span> <br>
+              <p>SELECT PLAN</p>
+            </li></div>
+            <div id="li"><button><a href="add.html">3</a></button><li><span>STEP 3</span> <br>
+              <p>ADD-ONS</p>
+            </li></div>
+            <div id="li"><button class="btn-1"><a href="sum.html" class="a-1">4</a></button><li><span>STEP 4</span> <br>
+              <p>SUMMARY</p>
+            </li></div>
+           </ol>
+         </div>
+         <div class="df2">
+            <h1>Finishing up</h1>
+            <p>Double check everything looks OK before confirming.</p>
+            <div class="summary">
+                <div id="beflex">
+                    <div class="">
+                        <p class="text1">Arcade <span id="motoyr">(Monthly)</span></p> <br>
+                        <form action="">
+                            <select name="items" id="items">
+                                <option value="0" active>change</option>
+                                <option value="1" class="o-1">Arcade</option>
+                                <option value="2">Pro</option>
+                                <option value="3">Advance</option>
+                            </select>
+                        </form>
+                    </div>
+                    <figure class="f-1">$9/mo</figure>
+                </div>
+                <hr>
+                <div id="beflex2">
+                   <h2>Online service</h2>
+                   <figure class="f">+$1/mo</figure>
+                </div>
+                <div id="beflex3">
+                    <h2>Larger storage</h2>
+                    <figure class="f">+$2/mo</figure>
+                </div>
+                <div id="beflex5">
+                    <h2></h2>
+                    <figure class="f"></figure>
+                </div>
+            </div>
+            <div id="beflex4">
+                <h2>Total <span>(per month)</span></h2>
+                <figure class="f-2">+$12/mo</figure>
+            </div>
+           
+                <div  class="tranbtn"><a href="add.html">Go Back</a></div>
+                <div id="button"><a href="thank.html">Confirm</a></div>
+
+            
+            
+         </div>
+       </div>
+     </div>
+  
+     <script>
+       let data = {
+        name: localStorage.getItem('person-name'),
+        online: localStorage.getItem('on-line'),
+        storage:localStorage.getItem('store-age'),
+        profile:localStorage.getItem('pro-file'),
+        email:localStorage.getItem('email-address'),
+        fh2:localStorage.getItem('f-h2'),
+        phone:localStorage.getItem('phone-number'),
+        h3:localStorage.getItem('h-3')
+       }
+
+
+
+
+       let texti = document.querySelector('.text1');
+       let f1 = document.querySelector('.f-1');
+       let f2 = document.querySelector('.f-2')
+
+       
+
+       function changeText(par){
+         
+            texti.innerHTML = par.fh2 + `<span id="motoyr">(Monthly)</span>`;
+            f1.innerHTML = par.h3
+
+            
+        
+       }
+        
+       let checkReload = true;
+
+       if(checkReload){
+         changeText(data)
+         checkReload = false
+       }
+
+
+       
+
+       let toYearMonth = localStorage.getItem('to-year/month');
+       let figure = document.querySelectorAll('.f');
+       let moToYr = document.getElementById('motoyr')
+       
+       if(toYearMonth == "yr"){
+        moToYr.innerHTML = "(Yearly)";
+           if(f1.innerHTML == "$9/mo"){
+              f1.innerHTML = "$90/yr";
+              f2.innerHTML = "+$120/yr";
+            }else if(f1.innerHTML == "$12/mo"){
+              f1.innerHTML = "$120/yr";
+              f2.innerHTML = "+$150/yr"
+            }else{
+              f1.innerHTML = "$150/yr"
+              f2.innerHTML = "+$180/yr"
+            }
+        let onlineLargerA = ["+$10/yr","+$20/yr","",""];
+        for(let i = 0; i<figure.length;i++){
+          figure[i].innerHTML = onlineLargerA[i]
+        }
+        }else if(toYearMonth == "mo"){
+        moToYr.innerHTML = "(Monthly)";
+           if(f1.innerHTML == "$9/mo"){
+              f2.innerHTML = "+$12/mo"
+            }else if(f1.innerHTML == "$12/mo"){
+              f2.innerHTML = "+$15/mo"
+            }else{
+              f2.innerHTML = "+$18/mo"
+            }
+        let onlineLargerB = ["+$1/mo","+$2/mo","",""];
+          for(let i = 0; i<figure.length;i++){
+            figure[i].innerHTML = onlineLargerB[i]
+          }
+        }
+        
+
+
+        let conBtn = document.getElementById('button');
+
+
+        conBtn.addEventListener('click',function(){
+          window.location.href = "thank.html"
+        })
+
+
+        if(window.location.href == 'file:///C:/Users/USER/Desktop/MAIN/sum.html'){
+          let btn = document.querySelector('.btn-1');
+          let a = document.querySelector('.a-1');
+
+
+          btn.style.backgroundColor = "hsl(206, 94%, 87%)";
+          btn.style.border = "0";
+          a.style.color = "black"
+        }
+
+     </script>
+</body>
+</html>

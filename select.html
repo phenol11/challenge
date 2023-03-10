@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="select.css">
+  <title>Frontend Mentor | Multi-step form</title>
+  
+
+  
+</head>
+<body>
+  
+     <div class="d-flex">
+       <div class="d-flexi">
+        <div class="df1">
+           <ol>
+            <div id="li"><button><a href="index.html">1</a></button><li><span>STEP 1</span> <br>
+                <p>YOUR INFO</p>
+            </li></div>
+            <div id="li"><button class="btn-1"><a href="select.html" class="a-1">2</a></button><li><span>STEP 2</span> <br>
+              <p>SELECT PLAN</p>
+            </li></div>
+            <div id="li"><button><a href="index.html">3</a></button><li><span>STEP 3</span> <br>
+              <p>ADD-ONS</p>
+            </li></div>
+            <div id="li"><button><a href="index.html">4</a></button><li><span>STEP 4</span> <br>
+              <p>SUMMARY</p>
+            </li></div>
+           </ol>
+         </div>
+         <div class="df2">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+            <div class="boxes">
+                <div class="first-box " id="f-box"> <img src="assets/images/icon-arcade.svg" alt="arcade-item">
+                    <h2>Arcade</h2>
+                    <h3>$9/mo</h3>
+                </div>
+                <div class="second-box" id="s-box">
+                    <img src="assets/images/icon-advanced.svg" alt="advance-item">
+                    <h2>Advance</h2>
+                    <h3>$12/mo</h3>
+                </div>
+                <div class="third-box" id="t-box">
+                    <img src="assets/images/icon-pro.svg" alt="advance-item">
+                    <h2>Pro</h2>
+                    <h3>$15/mo</h3>
+                </div>
+            </div>
+            <div id="toggle">
+              <div class="toggle">
+               
+                   <span class="before" >Monthly</span> <label class="switch"><input type="checkbox"  id="checkbox">
+                   <span class="slider round"></span></label><span class="after">Yearly</span>
+                
+              </div>
+            </div>
+               <div  class="tranbtn margin" ><a href="index.html">Go Back</a></div>
+               <div id="button" class="select-btn margin"><a href="add.html">Next Step</a></div>
+           
+         </div>
+       </div>
+     </div>
+  
+     <script>
+      let btnBox = document.getElementById('button');
+      let firstBox = document.getElementById('f-box')
+      let secondBox = document.getElementById('s-box')
+      let thirdBox = document.getElementById("t-box");
+
+      let hElement = document.getElementsByTagName('h2')
+     
+      
+
+      let arrBox = [firstBox,secondBox,thirdBox];
+
+      let isClicked = true;
+
+      let h3 = document.getElementsByTagName('h3')
+
+     for(let i = 0;i<arrBox.length; i++){
+        arrBox[i].addEventListener('click', function(e){
+         
+              e.preventDefault()
+        
+        
+              arrBox[i].classList.add('click')
+              setTimeout(() => {
+              arrBox[i].classList.remove('click')
+             
+             }, 500);
+             let h2Elem = arrBox[i].getElementsByTagName('h2')[0];
+
+            //  console.log(h3[i])
+
+
+             localStorage.setItem('f-h2',h2Elem.innerHTML)
+             localStorage.setItem('h-3',h3[i].innerHTML)
+             
+        
+      })
+     
+     }
+      
+
+      btnBox.addEventListener('click',function(){
+        window.location.href = "add.html"
+      })
+
+
+      let checkBox = document.getElementById('checkbox');
+      let monThly = document.querySelector('.before');
+      let yearly = document.querySelector('.after')
+       
+      
+      let isState = true;
+      checkBox.addEventListener('click', function(e){
+        if(isState){
+          yearly.classList.remove('changeBc')
+          // console.log(yearly.innerHTML)
+
+          monThly.classList.add('changeBc')
+          isState = false;
+          updateToYear();
+          localStorage.setItem('yearly',yearly.innerHTML)
+
+        }else{
+          // console.log(monThly.innerHTML)
+          monThly.classList.remove('changeBc')
+          yearly.classList.add('changeBc')
+          isState = true;
+          updateToMonth();
+          localStorage.setItem('monthly',monThly.innerHTML)
+        }
+      })
+
+      let marGin = document.querySelectorAll(".margin");
+
+      function updateToYear(){
+        for(let i = 0; i< h3.length; i++){
+          let h3Year = ["$90/yr","$120/yr","$150/yr"]
+          h3[i].innerHTML = h3Year[i] + "<br><span>2 months free</span>"
+        }
+        
+        for(let i = 0; i<marGin.length;i++){
+          let marValue = ["100px","-30px"]
+          marGin[i].style.marginTop = marValue[i]
+        }
+        localStorage.setItem('to-year/month','yr')
+      }
+
+      function updateToMonth(){
+        for(let i = 0; i< h3.length; i++){
+          let h3Year = ["$9/mo","$12/mo","$15/mo"]
+          h3[i].innerHTML = h3Year[i];
+        }
+        for(let i = 0; i<marGin.length;i++){
+          let marValue = ["120px","-30px"]
+          marGin[i].style.marginTop = marValue[i]
+        }
+        localStorage.setItem('to-year/month','mo')
+      }
+
+
+      if(window.location.href == 'file:///C:/Users/USER/Desktop/MAIN/select.html'){
+          let btn = document.querySelector('.btn-1');
+          let a = document.querySelector('.a-1');
+
+
+          btn.style.backgroundColor = "hsl(206, 94%, 87%)";
+          btn.style.border = "0";
+          a.style.color = "black"
+        }
+     </script>
+</body>
+</html>
