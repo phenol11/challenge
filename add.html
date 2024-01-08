@@ -41,7 +41,7 @@
 
             <div class="addbox">
                 <div>
-                    <input type="checkbox" name="" id="online">
+                    <input type="checkbox" name="" class="online">
                     <section>
                         <h3>Online service</h3>
                         <p>Access to mutiplayer games</p>
@@ -51,7 +51,7 @@
                     </figure>
                 </div>
                 <div>
-                    <input type="checkbox" name="" id="storage">
+                    <input type="checkbox" name="" class="online">
                     <section class="sect">
                         <h3>Larger storage</h3>
                         <p>Extra 1TB of cloud save</p>
@@ -61,7 +61,7 @@
                     </figure>
                 </div>
                 <div>
-                    <input type="checkbox" name="" id="profile">
+                    <input type="checkbox" name="" class="online" >
                     <section>
                         <h3> Customizable Profile</h3>
                         <p>Custom theme on your profile</p>
@@ -72,89 +72,12 @@
                 </div>
             </div>
             <div  class="tranbtn"><a href="select.html">Go Back</a></div>
-            <div id="button"><a href="sum.html">Next Step</a></div>
+            <div id="button" class="btnbox"><a href="sum.html">Next Step</a></div>
             
          </div>
        </div>
      </div>
   
-     <script>
-     
-        let onLine = document.getElementById('online');
-        let storeAge = document.getElementById('storage');
-        let proFile = document.getElementById('profile');
-
-        let isChecked = false;
-
-        onLine.addEventListener('click',function(){
-          if(!isChecked){
-              localStorage.setItem('on-line',"Online service")
-              isChecked = true;
-          }else{
-            localStorage.removeItem('on-line')
-            isChecked = false;
-          }
-        });
-
-        storeAge.addEventListener('click',function(){
-          if(!isChecked){
-              localStorage.setItem('store-age',"Larger storage")
-              isChecked = true;
-          }else{
-            localStorage.removeItem('store-age')
-            isChecked = false;
-          }
-        });
-
-        proFile.addEventListener('click',function(){
-          if(!isChecked){
-              localStorage.setItem('pro-file',"Customizable profile")
-              isChecked = true;
-          }else{
-            localStorage.removeItem('pro-file')
-           isChecked = false;
-        }
-        });
-
-
-        let toYearMonth = localStorage.getItem('to-year/month');
-        let figure = document.getElementsByTagName('figure');
-        
-        if(toYearMonth == "yr"){
-        let onlineLargerA = ["+$10/yr","+$20/yr","+$20/yr"];
-        for(let i = 0; i<figure.length;i++){
-          figure[i].innerHTML = onlineLargerA[i]
-        }
-        }else if(toYearMonth == "mo"){
-        let onlineLargerB = ["+$1/mo","+$2/mo","+$2/mo"];
-          for(let i = 0; i<figure.length;i++){
-            figure[i].innerHTML = onlineLargerB[i]
-          }
-        }
-
-
-
-
-        localStorage.removeItem('on-line');
-        localStorage.removeItem('store-age');
-        localStorage.removeItem('pro-file');
-        localStorage.removeItem('person-info');
-
-        
-
-
-        let a1 = document.querySelector('.a-1')
-
-        if(a1.innerHTML == "3"){
-          let btn = document.querySelector('.btn-1');
-          let a = document.querySelector('.a-1');
-
-
-          btn.style.backgroundColor = "hsl(206, 94%, 87%)";
-          btn.style.border = "0";
-          a.style.color = "black"
-        }
-
-     </script>
+     <script src="./add.js" type="module"></script>
 </body>
 </html>

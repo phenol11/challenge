@@ -47,8 +47,8 @@
                             <select name="items" id="items">
                                 <option value="0" active>change</option>
                                 <option value="1" class="o-1">Arcade</option>
-                                <option value="2">Pro</option>
-                                <option value="3">Advance</option>
+                                <option value="2">Advance</option>
+                                <option value="3">Pro</option>
                             </select>
                         </form>
                     </div>
@@ -56,20 +56,20 @@
                 </div>
                 <hr>
                 <div id="beflex2">
-                   <h2>Online service</h2>
+                   <h2 class="h2-2">Online service</h2>
                    <figure class="f">+$1/mo</figure>
                 </div>
-                <div id="beflex3">
-                    <h2>Larger storage</h2>
+                <div id="beflex3" >
+                    <h2 class="h2-2">Larger storage</h2>
                     <figure class="f">+$2/mo</figure>
                 </div>
-                <div id="beflex5">
+                <!-- <div id="beflex5">
                     <h2></h2>
                     <figure class="f"></figure>
-                </div>
+                </div> -->
             </div>
             <div id="beflex4">
-                <h2>Total <span>(per month)</span></h2>
+                <h2>Total <span class="permonth">(per month)</span></h2>
                 <figure class="f-2">+$12/mo</figure>
             </div>
            
@@ -82,103 +82,89 @@
        </div>
      </div>
   
-     <script>
-       let data = {
-        name: localStorage.getItem('person-name'),
-        online: localStorage.getItem('on-line'),
-        storage:localStorage.getItem('store-age'),
-        profile:localStorage.getItem('pro-file'),
-        email:localStorage.getItem('email-address'),
-        fh2:localStorage.getItem('f-h2'),
-        phone:localStorage.getItem('phone-number'),
-        h3:localStorage.getItem('h-3')
-       }
+     <script src="./sum.js" type="module">
+      //  let data = {
+      //   name: localStorage.getItem('person-name'),
+      //   online: localStorage.getItem('on-line'),
+      //   storage:localStorage.getItem('store-age'),
+      //   profile:localStorage.getItem('pro-file'),
+      //   email:localStorage.getItem('email-address'),
+      //   fh2:localStorage.getItem('f-h2'),
+      //   phone:localStorage.getItem('phone-number'),
+      //   h3:localStorage.getItem('h-3')
+      //  }
 
 
 
 
-       let texti = document.querySelector('.text1');
-       let f1 = document.querySelector('.f-1');
-       let f2 = document.querySelector('.f-2')
+      //  let texti = document.querySelector('.text1');
+      //  let f1 = document.querySelector('.f-1');
+      //  let f2 = document.querySelector('.f-2')
 
        
 
-       function changeText(par){
+      //  function changeText(par){
          
-            texti.innerHTML = par.fh2 + `<span id="motoyr">(Monthly)</span>`;
-            f1.innerHTML = par.h3
+      //       texti.innerHTML = par.fh2 + `<span id="motoyr">(Monthly)</span>`;
+      //       f1.innerHTML = par.h3
 
             
         
-       }
+      //  }
         
-       let checkReload = true;
+      //  let checkReload = true;
 
-       if(checkReload){
-         changeText(data)
-         checkReload = false
-       }
+      //  if(checkReload){
+      //    changeText(data)
+      //    checkReload = false
+      //  }
 
 
        
 
-       let toYearMonth = localStorage.getItem('to-year/month');
-       let figure = document.querySelectorAll('.f');
-       let moToYr = document.getElementById('motoyr')
+      //  let toYearMonth = localStorage.getItem('to-year/month');
+      //  let figure = document.querySelectorAll('.f');
+      //  let moToYr = document.getElementById('motoyr')
        
-       if(toYearMonth == "yr"){
-        moToYr.innerHTML = "(Yearly)";
-           if(f1.innerHTML == "$9/mo"){
-              f1.innerHTML = "$90/yr";
-              f2.innerHTML = "+$120/yr";
-            }else if(f1.innerHTML == "$12/mo"){
-              f1.innerHTML = "$120/yr";
-              f2.innerHTML = "+$150/yr"
-            }else{
-              f1.innerHTML = "$150/yr"
-              f2.innerHTML = "+$180/yr"
-            }
-        let onlineLargerA = ["+$10/yr","+$20/yr","",""];
-        for(let i = 0; i<figure.length;i++){
-          figure[i].innerHTML = onlineLargerA[i]
-        }
-        }else if(toYearMonth == "mo"){
-        moToYr.innerHTML = "(Monthly)";
-           if(f1.innerHTML == "$9/mo"){
-              f2.innerHTML = "+$12/mo"
-            }else if(f1.innerHTML == "$12/mo"){
-              f2.innerHTML = "+$15/mo"
-            }else{
-              f2.innerHTML = "+$18/mo"
-            }
-        let onlineLargerB = ["+$1/mo","+$2/mo","",""];
-          for(let i = 0; i<figure.length;i++){
-            figure[i].innerHTML = onlineLargerB[i]
-          }
-        }
+      //  if(toYearMonth == "yr"){
+      //   moToYr.innerHTML = "(Yearly)";
+      //      if(f1.innerHTML == "$9/mo"){
+      //         f1.innerHTML = "$90/yr";
+      //         f2.innerHTML = "+$120/yr";
+      //       }else if(f1.innerHTML == "$12/mo"){
+      //         f1.innerHTML = "$120/yr";
+      //         f2.innerHTML = "+$150/yr"
+      //       }else{
+      //         f1.innerHTML = "$150/yr"
+      //         f2.innerHTML = "+$180/yr"
+      //       }
+      //   let onlineLargerA = ["+$10/yr","+$20/yr","",""];
+      //   for(let i = 0; i<figure.length;i++){
+      //     figure[i].innerHTML = onlineLargerA[i]
+      //   }
+      //   }else if(toYearMonth == "mo"){
+      //   moToYr.innerHTML = "(Monthly)";
+      //      if(f1.innerHTML == "$9/mo"){
+      //         f2.innerHTML = "+$12/mo"
+      //       }else if(f1.innerHTML == "$12/mo"){
+      //         f2.innerHTML = "+$15/mo"
+      //       }else{
+      //         f2.innerHTML = "+$18/mo"
+      //       }
+      //   let onlineLargerB = ["+$1/mo","+$2/mo","",""];
+      //     for(let i = 0; i<figure.length;i++){
+      //       figure[i].innerHTML = onlineLargerB[i]
+      //     }
+      //   }
         
 
 
-        let conBtn = document.getElementById('button');
+      //   let conBtn = document.getElementById('button');
 
 
-        conBtn.addEventListener('click',function(){
-          window.location.href = "thank.html"
-        })
-
-
-        let a1 = document.querySelector('.a-1')
-
-        if(a1.innerHTML == "4"){
-          let btn = document.querySelector('.btn-1');
-          let a = document.querySelector('.a-1');
-
-
-          btn.style.backgroundColor = "hsl(206, 94%, 87%)";
-          btn.style.border = "0";
-          a.style.color = "black"
-        }
-
+      //   conBtn.addEventListener('click',function(){
+      //     window.location.href = "thank.html"
+      //   })
      </script>
 </body>
 </html>

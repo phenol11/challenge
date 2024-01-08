@@ -38,62 +38,19 @@
             <p>Please provide your name,email address, and phone number.</p>
             <form action="select.html">
               <label for="name">Name</label> <br>
-              <input type="text" required value="Vanessa Mint" id="name"><br>
+              <input type="text" placeholder="Vanessa Mint" id="name"><br>
               <label for="email-address">Email Address</label> <br>
-              <input type="email" required value="vanessamint@" id="email-address"><br>
+              <input type="email" required placeholder="vanessamint@" id="email-address"><br>
               <label for="phone-number">Phone Number</label> <br>
-              <input type="text" required value="e.g +1 234 567 890" id="phone-number"><br>
+              <input type="text" placeholder="e.g +1 234 567 890" id="phone-number"><br>
 
               <!-- <input type="submit" value="Next Step" id="submit" href="select.html"> -->
-              <div id="button"><a href="select.html">Next Step</a></div>
+              <div id="button"><a href="">Next Step</a></div>
             </form>
          </div>
        </div>
      </div>
   
-  <script>
-
-        let personName = document.getElementById("name");
-        let emailAddress = document.getElementById("email-address");
-        let phoneNumber = document.getElementById("phone-number");
-
-        // console.log(personName)
-        // console.log(emailAddress)
-        // console.log(phoneNumber)
-
-        let personInfo = [];
-
-        let btnBox = document.getElementById('button');
-
-        btnBox.addEventListener('click', function(e){
-
-            
-            e.preventDefault()
-
-            localStorage.setItem('person-name',personName.value)
-            localStorage.setItem('email-address',emailAddress.value)
-            localStorage.setItem('phone-number',phoneNumber.value)
-
-            window.location.href= "select.html"
-          
-        });
-
-        personInfo.push(localStorage.getItem('person-name'),localStorage.getItem('email-address'),localStorage.getItem('phone-number'));
-
-        
-        let a1 = document.querySelector('.a-1')
-
-        if(a1.innerHTML == "1"){
-          let btn = document.querySelector('.btn-1');
-          let a = document.querySelector('.a-1');
-
-
-          btn.style.backgroundColor = "hsl(206, 94%, 87%)";
-          btn.style.border = "0";
-          a.style.color = "black"
-        }
-
-
-  </script>
+  <script src="index.js" type="module" ></script>
 </body>
 </html>
